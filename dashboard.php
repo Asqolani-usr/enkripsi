@@ -31,19 +31,19 @@ if (!$user) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard - Secure System</title>
+    <title>Dashboard - Sistem Aman</title>
     <style>body { font-family: sans-serif; padding: 20px; }</style>
 </head>
 <body>
-    <h1>Welcome, <?php echo htmlspecialchars($user['username']); ?>!</h1>
+    <h1>Selamat Datang, <?php echo htmlspecialchars($user['username']); ?>!</h1>
 
     <div style="border: 1px solid #ccc; padding: 15px; background: #f9f9f9;">
-        <h3>Secure Session Information</h3>
-        <p>This page is protected. The server received your encrypted session cookie, decrypted it, and verified its validity.</p>
+        <h3>Informasi Sesi Aman</h3>
+        <p>Halaman ini dilindungi. Server menerima cookie sesi terenkripsi Anda, mendekripsinya, dan memverifikasi validitasnya.</p>
         <ul>
             <li><b>User ID:</b> <?php echo htmlspecialchars($user['user_id']); ?></li>
-            <li><b>Session Created:</b> <?php echo date('Y-m-d H:i:s', $user['created_at']); ?></li>
-            <li><b>Session Expires:</b> <?php echo date('Y-m-d H:i:s', $user['expires']); ?></li>
+            <li><b>Sesi Dibuat:</b> <?php echo date('Y-m-d H:i:s', $user['created_at']); ?></li>
+            <li><b>Sesi Berakhir:</b> <?php echo date('Y-m-d H:i:s', $user['expires']); ?></li>
         </ul>
     </div>
 

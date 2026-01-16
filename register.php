@@ -12,24 +12,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Password will be hashed inside register_user() before storage.
         $result = register_user($username, $password);
         if ($result === true) {
-            $message = "Registration successful! <a href='login.php'>Login here</a>";
+            $message = "Registrasi berhasil! <a href='login.php'>Login di sini</a>";
         } else {
             $message = "Error: " . htmlspecialchars($result);
         }
     } else {
-        $message = "Please fill in all fields.";
+        $message = "Harap isi semua kolom.";
     }
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Register - Secure System</title>
+    <title>Registrasi - Sistem Aman</title>
     <style>body { font-family: sans-serif; padding: 20px; }</style>
 </head>
 <body>
-    <h2>Register User</h2>
-    <p><i>Passwords are hashed (Bcrypt) before storage.</i></p>
+    <h2>Registrasi Pengguna</h2>
+    <p><i>Password di-hash (Bcrypt) sebelum disimpan.</i></p>
 
     <?php if ($message): ?>
         <p style="color: blue;"><?php echo $message; ?></p>
@@ -38,8 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST">
         <label>Username: <input type="text" name="username" required></label><br><br>
         <label>Password: <input type="password" name="password" required></label><br><br>
-        <button type="submit">Register</button>
+        <button type="submit">Daftar</button>
     </form>
-    <p>Already have an account? <a href="login.php">Login here</a></p>
+    <p>Sudah punya akun? <a href="login.php">Login di sini</a></p>
 </body>
 </html>

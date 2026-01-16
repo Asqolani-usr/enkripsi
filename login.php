@@ -40,19 +40,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: dashboard.php");
         exit;
     } else {
-        $message = "Invalid username or password.";
+        $message = "Username atau password salah.";
     }
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login - Secure System</title>
+    <title>Login - Sistem Aman</title>
     <style>body { font-family: sans-serif; padding: 20px; }</style>
 </head>
 <body>
     <h2>Login</h2>
-    <p><i>Password is verified against the stored hash. Session token is generated, encrypted, and sent as a cookie.</i></p>
+    <p><i>Password diverifikasi dengan hash yang tersimpan. Token sesi dibuat, dienkripsi, dan dikirim sebagai cookie.</i></p>
 
     <?php if ($message): ?>
         <p style="color: red;"><?php echo $message; ?></p>
@@ -61,8 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST">
         <label>Username: <input type="text" name="username" required></label><br><br>
         <label>Password: <input type="password" name="password" required></label><br><br>
-        <button type="submit">Login</button>
+        <button type="submit">Masuk</button>
     </form>
-    <p>Don't have an account? <a href="register.php">Register</a></p>
+    <p>Belum punya akun? <a href="register.php">Daftar</a></p>
 </body>
 </html>

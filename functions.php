@@ -8,7 +8,7 @@ function get_db_connection() {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     } catch (PDOException $e) {
-        die("Connection failed: " . $e->getMessage());
+        die("Koneksi gagal: " . $e->getMessage());
     }
 }
 
@@ -102,9 +102,9 @@ function register_user($username, $password) {
         return true;
     } catch (PDOException $e) {
         if ($e->getCode() == 23000) { // Integrity constraint violation (unique username)
-            return "Username already exists.";
+            return "Username sudah digunakan.";
         }
-        return "Registration error: " . $e->getMessage();
+        return "Gagal registrasi: " . $e->getMessage();
     }
 }
 
